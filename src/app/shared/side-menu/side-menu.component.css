@@ -1,0 +1,18 @@
+h2 {
+    color: #C70039;
+}
+
+p {
+    color:  #900C3F;
+    text-align: justify;
+}
+
+li.active {
+    background-color:  #C70039 !important;
+    /* #144959 !important; */
+    border-color: #C70039 !important;
+    /*#581845 !important;*/
+    color: white !important;
+     /* #FFC300; */
+     /* #144959 !important; */
+}

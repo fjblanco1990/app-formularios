@@ -1,0 +1,27 @@
+<h2>Template </h2>
+<small>
+   <p>
+    Angular se encarga de manejar todo el formulario de manera automatica, 
+    Todos los cambios que se hagan o espesifiquemos de los detalles de los 
+    campos lo haga desde el <strong>HTML</strong> , quiere decir que la mayor parte de la logica esta en el <strong>HTML</strong>
+   </p>  
+</small>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let item of template_menu" [routerLink]="[item.ruta]" routerLinkActive="active">
+        {{item.text}}
+    </li>
+</ul>
+
+<h2 class="mt-3">Reactive</h2>
+<small>
+   <p>
+    Cuando usamos reactive, esta procura a que el html sea lo mas basico posible y que el trabajo pesado este en  <strong>component.ts</strong>
+   </p>  
+</small>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action" *ngFor="let item of reactive_menu" [routerLink]="[item.ruta]" routerLinkActive="active">
+        {{item.text}}
+    </li>
+</ul>
