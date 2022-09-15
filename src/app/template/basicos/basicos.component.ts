@@ -8,13 +8,26 @@ import { NgForm } from '@angular/forms';
 })
 export class BasicosComponent implements OnInit {
   @ViewChild('miFormulario', { static: true }) miFormulario!: NgForm; //sirve para acceder a las referencias locales 
+
+  initailform = {
+    producto: '',
+    precio: 0,
+    existencia: 10
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
   // guardar(fortmulario: any) {
-  guardar() {
-    console.log(this.miFormulario);
+  guardar() {//en el resetForm , puedo enviar un objeto que tenga la informacion que yo quiera despues de limpiar el formulario 
+    this.miFormulario.resetForm({
+        precio: 0,
+        existencia:0
+    });
+    
+
     
   }
 
@@ -24,7 +37,6 @@ export class BasicosComponent implements OnInit {
   }
 
   precioValid(): boolean {
-    return (this.miFormulario?.controls['precio'].invalid &&
-            this.miFormulario?.controls['precio'].touched);
+    return (this.miFormulario?.controls['precio'].touched && this.miFormulario?.controls['precio'].value < 0);
   }
 }

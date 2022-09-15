@@ -7,36 +7,45 @@
                 <label for="" class="col-sm-3 col-form-label">Producto</label>
                 <div class="col-sm-9">
                     <input type="text" name="" id="" class="form-control" placeholder="Nombre del producto" 
-                    ngModel 
+                    [ngModel]="initailform.producto" 
                     name="producto"
                     required
-                    minlength="">
+                    min="0">
                     <span class="form-text text-danger" 
                     *ngIf="nombreValid()">
-                    Debe de ser de 3 letras</span>
+                     Debe de ser de 3 letras
+                    </span>
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label">Precio</label>
                 <div class="col-sm-9">
                     <input type="number" name="" id="" class="form-control" placeholder="precio del producto"  
-                    ngModel 
+                    [ngModel]="initailform.precio"
                     name="precio"
                     required>
+                    <span class="form-text text-danger" 
+                    *ngIf="precioValid()">
+                     Debe de ser 0 o mayor
+                    </span>
+                    
                 </div>
             </div>
             <div class="row mb-3">
                 <label for="" class="col-sm-3 col-form-label">Existencias</label>
                 <div class="col-sm-9">
                     <input type="number" name="" id="" class="form-control" placeholder="Existensias del producto"  
-                    ngModel 
-                    name="existencia">
+                    [ngModel]="initailform.existencia"  
+                    name="existencia"
+                    CustomMin
+                    [minimo]="0"
+                    required>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <!--float-end pone el elemento al final-->
-                    <button type="submit" class="btn btn-primary float-end">Guardar</button>
+                    <button type="submit" class="btn btn-primary float-end" [disabled]="miFormulario.invalid">Guardar</button>
                 </div>
             </div>
         </form>
@@ -59,6 +68,10 @@
         <span>Value</span>
         <pre>
             {{ miFormulario.value | json }}
+        </pre>
+        <span>Custom Directive</span>
+        <pre>
+            {{ miFormulario.controls['existencia'].errors  | json }}
         </pre>
     </div>
 </div>

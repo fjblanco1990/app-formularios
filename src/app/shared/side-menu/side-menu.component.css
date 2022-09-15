@@ -7,6 +7,10 @@ p {
     text-align: justify;
 }
 
+li {
+    cursor: pointer;
+}
+
 li.active {
     background-color:  #C70039 !important;
     /* #144959 !important; */
