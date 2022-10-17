@@ -43,5 +43,16 @@ export class SideMenuComponent implements OnInit {
     }
   ]
 
+  atuh_menu: MenuItem [] = [
+    {
+      text: 'Registro',
+      ruta: '/auth/registro'
+    },
+    {
+      text: 'Login',
+      ruta: '/auth/login'
+    }
+  ]
+
 
 }
